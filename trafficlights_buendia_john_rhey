@@ -1,10 +1,113 @@
-- 👋 Hi, I’m @rhyjiii
-- 👀 I’m interested in ...
-- 🌱 I’m currently learning ...
-- 💞️ I’m looking to collaborate on ...
-- 📫 How to reach me ...
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+  <style type="text/css">
+     *{box-sizing: border-box;
+    }
+    body {
+      background-color: #329ed6;
+      display: flex;
+      align-items: center;
+      justify-content: center; 
+      min-height: 100vh;
+      margin: 0;
+    }
+    h1{
+      align-items: center;
+      height: 550px;
+    }
+        .container {
+        display: flex;
+        align-items: center;
+        justify-content:
+        space-between;
+        flex-direction: column;
+        width: 85px;
+        height: 250px;
+        padding: 10px;
+        background-color: #2d3e55;
+        border-radius: 50px;
+      }
+        .circle{
+          position: relative; 
+          background-color: rgba(0, 0,0, 0.3);
+          border-radius: 50%;
+          height: 50px;
+          width: 50px;
+        }
+        .circle:after {
+          border-right: 4px solid rgba(255, 255, 255, 0.6);
+          position: absolute;
+          content: '';
+          width: 40px;
+          height: 40px;
+          border-kadius: 50%;
+          top: 5px;
+          Left: 4px;
+        }
+        #red {
+          background-color: #c0392b; box-shadow: 0 0 20px 5px # c0392b;
+        }
+        #yellow { 
+          background-color: #f1c40f; 
+          box-shadow: 0 0 20px 5px # f1c40f;
+        }
+        #green {
+           background-color: #2ecc71; 
+           box-shadow: 0 0 20px 5px # 2ecc71;
+         }
+         .line::before {
+      content: '';
+      width: 8px;
+      height: 540px;
+      background-color: rgba(0, 0,0, 0.3);
+      position: absolute;
+      top: 88%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+</head>
+<body onload="timer;">
+  <div class="line"></div>
+  <div class ="container">
+    <div  class="circle" id="red"></div>
+    <div  class="circle" id="yellow"></div>
+    <div  class="circle" id="green"></div>
+  </div>
+    <script>
+function startTrafficSignal() {
+  var red = document.getElementById("red");
+  var yellow = document.getElementById("yellow");
+  var green = document.getElementById("green");
 
-<!---
-rhyjiii/rhyjiii is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+  red.style.opacity = 5;
+  setTimeout(function () {
+      red.style.opacity = .3;
+      yellow.style.opacity = .3;
+      green.style.opacity = 3;
+  }, 5000);
+
+  setTimeout(function () {
+      red.style.opacity = .3;
+      yellow.style.opacity = 3;
+      green.style.opacity = .3;
+  }, 7000);
+
+  setTimeout(function () {
+      red.style.opacity = 3;
+      yellow.style.opacity = .3;
+      green.style.opacity = .3;
+  }, 12000);
+}
+
+var timer = setInterval(startTrafficSignal, 12000);
+
+startTrafficSignal();
+	</script>
+
+</body>
+</html>
