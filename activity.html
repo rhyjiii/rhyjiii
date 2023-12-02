@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JAVASCRIPT ACTIVITY</title>
+</head>    
+<body>
+    <label>PRINCIPLE</label>
+    <input type="text" id="principle" placeholder="Principle"> <br><br>
+    <label> YEARS </label> 
+    <input type="text" id="years" placeholder="Years"><br><br>
+    <label>INTEREST (%)</label>
+    <input type="text" id="interest" placeholder="Interest"><br>
+
+    <br>
+
+    <button style="color: red; font-weight: bold;" id="calculateBtn" onclick="countInt()">CALCULATE</button><br>
+
+    <div id="output">
+        <h2>Simple Interest is: <span id="outputspan"></span></h2>
+    </div>
+
+    <script>
+
+        var principle = document.getElementById("principle");
+        var interest = document.getElementById("interest");
+        var years = document.getElementById("years");
+        var outputspan = document.getElementById("outputspan");
+        function countInt() {
+            p = parseFloat(principle.value);
+            n = parseFloat(years.value);
+            r = parseFloat(interest.value);
+            Int = (p*n*r)/100;
+
+            outputspan.innerHTML = Int;
+        }
+    </script>
+</body>
+</html>
